@@ -49,7 +49,7 @@ export class LocalStorageService {
     if (!localStorage["stocks"]) {
       localStorage["stocks"] = JSON.stringify([
         {
-          id: 1,
+          id: 'HDW001',
           name: 'Oversize-T-shirt',
           price: 35,
           image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
@@ -58,7 +58,7 @@ export class LocalStorageService {
           status: 1,
         },
         {
-          id: 2,
+          id: 'HDW002',
           name: 'Oversize-T-shirt',
           price: 35,
           image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
@@ -67,7 +67,7 @@ export class LocalStorageService {
           status: 1,
         },
         {
-          id: 3,
+          id: 'HDW003',
           name: 'T-shirt',
           price: 35,
           image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
@@ -76,7 +76,7 @@ export class LocalStorageService {
           status: 1,
         },
         {
-          id: 4,
+          id: 'HDW004',
           name: 'Women-T-shirt',
           price: 35,
           image: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg',
@@ -85,7 +85,7 @@ export class LocalStorageService {
           status: 1,
         },
         {
-          id: 5,
+          id: 'HDW005',
           name: 'Bottle',
           price: 35,
           image: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg',
@@ -94,7 +94,7 @@ export class LocalStorageService {
           status: 1,
         },
         {
-          id: 6,
+          id: 'HDW006',
           name: 'Bottle',
           price: 35,
           image: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg',
@@ -103,7 +103,7 @@ export class LocalStorageService {
           status: 1,
         },
         {
-          id: 7,
+          id: 'HDW007',
           name: 'Short note',
           price: 35,
           image: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg',
@@ -112,7 +112,7 @@ export class LocalStorageService {
           status: 1,
         },
         {
-          id: 8,
+          id: 'HDW008',
           name: 'Pen',
           price: 35,
           image: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
@@ -121,7 +121,7 @@ export class LocalStorageService {
           status: 1,
         },
         {
-          id: 9,
+          id: 'HDW009',
           name: 'Accessories',
           price: 70,
           image: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-05.jpg',
@@ -130,7 +130,7 @@ export class LocalStorageService {
           status: 1,
         },
         {
-          id: 10,
+          id: 'HDW0010',
           name: 'Note set',
           price: 100,
           image: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-06.jpg',

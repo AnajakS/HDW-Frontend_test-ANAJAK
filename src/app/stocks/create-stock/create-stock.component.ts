@@ -87,7 +87,7 @@ export class CreateStockComponent implements OnInit {
 
   createStock() {
     this.stockForm.value.image = this.cover;
-    this.stockForm.value.id = this.localStorageService.getListStock().length + 1;
+    this.stockForm.value.id = 'HDW00' + (this.localStorageService.getListStock().length + 1);
     this.stockForm.value.status = 1
     this.localStorageService.createStock(this.stockForm.value)
     window.alert(

@@ -1,0 +1,108 @@
+<div class="flex flex-col ">
+    <div class="">
+        <header class="relative bg-white">
+            <p
+                class="bg-purple-900 h-36 flex items-center justify-center text-4xl font-medium text-white px-4 sm:px-6 lg:px-8">
+                HANDYWINGS SHOP</p>
+
+            <nav aria-label="Top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="border-b border-gray-200">
+                    <div class="h-16 flex items-center">
+
+                        <!-- Logo -->
+                        <div class="ml-4 flex lg:ml-0">
+                            <span>
+
+                                <img src="../../assets/favicon_io/favicon-32x32.png" alt="AS-logo">
+                            </span>
+                        </div>
+
+                        <div class="ml-auto flex items-center" [formGroup]="searchForm">
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>Search</mat-label>
+                                <input matInput color="black" placeholder="serch by name" (keydown)="search($event)"
+                                    formControlName="search">
+                                <mat-icon matSuffix>search</mat-icon>
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="bg-slate-50">
+        <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">COLECTION</h2>
+                <div class="ml-4 flex flex-row gap-4 lg:ml-0">
+                    <button mat-stroked-button [routerLink]="['../create_stock']">CREATE</button>
+                    <button mat-stroked-button (click)="removeBySelect()">DELETE SLECECT</button>
+                </div>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-3 lg:grid-cols-5 xl:gap-x-8">
+                <div class="group relative"
+                    *ngFor="let stock of stocks | paginate: { itemsPerPage: 5, currentPage: p }">
+
+                    <div class="flex example-section">
+                        <mat-checkbox class="example-margin mb-3 z-10" color="primary" (change)="checkId($event,stock)">
+                        </mat-checkbox>
+                    </div>
+                    <div
+                        class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden  lg:h-80 lg:aspect-none">
+                        <img src={{stock.image}} alt={{stock.name.concat(stock.detail)}}
+                            class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a>
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    {{stock.name}}
+                                </a>
+                            </h3>
+                            <p class="mt-1 text-sm text-gray-500">{{stock.detail}}</p>
+                        </div>
+                        <div>
+                            <h3 class="text-sm text-gray-700">
+                                <a>
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    {{stock.price}}
+                                </a>
+                            </h3>
+
+                            <p class="mt-1 text-sm text-gray-500"><i class="fa fa-star  "
+                                    aria-hidden="true"></i>{{stock.rate}}</p>
+                        </div>
+
+                    </div>
+                    <div class="flex justify-between">
+                        <button mat-stroked-button [routerLink]="['../edit_stock',stock.id]">EDIT</button>
+                        <button mat-stroked-button (click)="removeById(stock.id)">DELETE</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="">
+        <footer class="relative bg-white">
+            <nav aria-label="Top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="border-t border-gray-200">
+                    <div class="h-16 flex items-center">
+
+
+                        <div class="ml-auto flex items-center">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </footer>
+    </div>
+</div>

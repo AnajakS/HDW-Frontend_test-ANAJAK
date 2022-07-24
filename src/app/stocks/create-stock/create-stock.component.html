@@ -1,0 +1,100 @@
+<div class="flex flex-col ">
+    <div class="">
+        <header class="relative bg-white">
+            <p
+                class="bg-purple-900 h-36 flex items-center justify-center text-4xl font-medium text-white px-4 sm:px-6 lg:px-8">
+                HANDYWINGS STORE</p>
+
+            <nav aria-label="Top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="border-b border-gray-200">
+                    <div class="h-16 flex items-center">
+
+                        <!-- Logo -->
+                        <div class="ml-4 flex lg:ml-0">
+                            <button mat-stroked-button [routerLink]="['../']">STORE</button>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="bg-slate-50">
+        <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+            <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">CREATE</h2>
+
+            <div class="flex flex-row justify-center gap-16" [formGroup]="stockForm">
+
+                <!-- Upload Image -->
+                <div class="flex flex-col justify-center  ">
+                    <div
+                        class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        <div class="flex items-center justify-center w-80 lg:h-80 border-2 border-gray-300 cursor-pointer"
+                            *ngIf="!cover" (click)="imageLogoUpload.click()">
+                            <span class="text-xl text-gray-300"></span>
+                        </div>
+                        <img class="w-80 h-80 object-center object-cover lg:w-80 lg:h-80" *ngIf="cover" [src]="cover"
+                            alt="image_logo">
+
+                    </div>
+                    <div class="flex justify-end mb-2">
+                        <span class="ml-2  mt-2 text-sm cursor-pointer" (click)="imageLogoUpload.click()">Upload</span>
+                        <!-- <span class="ml-2 mr-1 mt-2 text-sm text-red-400 cursor-pointer"
+                                (click)="onDeleteCover()">Delete</span> -->
+
+                        <input #imageLogoUpload type="file" class="hidden" accept="image/*"
+                            (change)="onUploadCover($event)">
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-center  ">
+                    <mat-form-field appearance="outline">
+                        <mat-label>NAME</mat-label>
+                        <input matInput formControlName="name" >
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>PRICE</mat-label>
+                        <input matInput type="number" formControlName="price">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>DETAIL</mat-label>
+                        <input matInput formControlName="detail">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>RATE</mat-label>
+                        <input matInput type="number" min="0"   formControlName="rate">
+                    </mat-form-field>
+
+                    <div class="flex justify-end ">
+                        <button mat-stroked-button (click)="createStock()">SAVE</button>
+                    </div>
+                </div>
+                
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="">
+        <footer class="relative bg-white">
+            <nav aria-label="Top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="border-t border-gray-200">
+                    <div class="h-16 flex items-center">
+
+
+                        <div class="ml-auto flex items-center">
+                            <!-- <i class="fa-regular fa-square-plus"></i>
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <i class="fa-solid fa-cart-plus fa-lg"></i> -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </footer>
+    </div>
+</div>
